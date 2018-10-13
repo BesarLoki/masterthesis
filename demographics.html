@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Disability Bias Survey</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+
+      </head>
+
+    <body>
+      <div class="navbar is-fixed-top">
+        <div class="container">
+            <div class="columns" style="display: flex;">
+              <div class="column is-4 is-6-mobile" style="align-self: center;">
+                  <img src="{{ url_for('static', filename='img/centerlogo.jpg') }}" width="900" style="min-width:20rem; max-height: 8rem;">
+              </div>
+
+              <div class="column is-4 is-1-mobile" style="align-self: flex-end;">
+              </div>
+              <div class="column is-4 is-hidden-mobile" style="align-self: flex-end;">
+                  <div class="field is-grouped is-grouped-multiline">
+                      <div class="control">
+                        <div class="tags has-addons">
+                          <span class="tag is-dark" style="height: 4vh; font-size: 1.25rem">Umfrage ausgefüllt</span>
+                          <span class="tag is-info" style="height: 4vh; font-size: 1.25rem">80%</span>
+                        </div>
+                      </div>
+                  <progress class="progress is-medium" value="80" max="100"></progress>
+                  <br>
+                  </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+
+<div class="divider">
+
+</div>
+<div class="divider">
+
+</div>
+
+<section>
+    <div class="hero-body" style="overflow: scroll;">
+        <div class="container">
+          <div class="columns">
+            <div class="column is-6">
+                <div class="content is-large">
+                    <h3>
+                      Zur Auswertung der Ergebnisse benötigen wir noch einige Angaben.
+                    </h3>
+                  </div>
+                  <form>
+                    <div class="field">
+                      <label class="label">Name</label>
+                      <div class="control">
+                        <input class="input" type="text" placeholder="Text input">
+                      </div>
+                    </div>
+
+                    <div class="field">
+                      <label class="label">Subject</label>
+                      <div class="control">
+                        <div class="select">
+                          <select>
+                            <option>Zwischen 1-5 auswählen</option>
+                            <option>1</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  <div class="field is-grouped">
+                    <div class="control">
+                      <div class="content">
+                        <h5 style="margin-bottom: 0px;">
+                          Meine Eltern hassen mich. Wie findest du das?
+                        </h5>
+                      </div>
+                      <label>
+                        Schlecht
+                      </label>
+                      <label class="radio">
+                        <input type="radio" name="rsvp" value="1">
+                          1
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="rsvp" value="2">
+                          2
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="rsvp" value="3">
+                          3
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="rsvp" value="4">
+                          4
+                        </label>
+                        <label class="radio">
+                          <input type="radio" name="rsvp" value="5">
+                          5
+                        </label>
+                        <label>
+                            Ausgezeichnet
+                          </label>
+                      </div>
+                    </div>
+
+                    <div class="field is-grouped">
+                      <div class="control">
+                        <button class="button is-link">Submit</button>
+                      </div>
+                      <div class="control">
+                        <button class="button is-text">Cancel</button>
+                      </div>
+                    </div>
+                  </form>
+            </div>
+
+            <div class="column is-6">
+                <img src="{{ url_for('static', filename='img/agree.jpeg') }}">
+            </div>
+          </div>
+
+
+          </div>
+      </div>
+    </section>

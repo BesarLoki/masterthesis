@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <link rel="stylesheet" href="custom.css">
+
+  </head>
+  <body>
+
+    <section class="hero is-fullheight" style="display:block;">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-5">
+                        <div class="tile notification" style="display: flex; justify-content: center;">
+                            <div class="content">
+                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Menschen mit Behinderung oder Positives Wort</span></h1>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-2">
+
+                    </div>
+
+                    <div class="column is-5">
+                        <div class="tile notification" style="display: flex; justify-content: center;">
+                            <div class="content">
+                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Menschen ohne Behinderung oder Negatives Wort</span></h1>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-body" style="display: flex;">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-1">
+
+                        </div>
+                        <div class="column is-9">
+                            <div class="content is-large notification is-primary">
+                                <p class="title">
+                                    Block 3 von 7 - Übung
+                                </p>
+                                <ul>
+                                    <li>
+                                            Drücken Sie die Taste <strong>„E“</strong>, wenn ein Wort der Kategorie <strong>„Menschen mit Behinderung oder Positives Wort“</strong> auftaucht.
+                                    </li>
+                                    <li>
+                                            Drücken Sie die Taste <strong>„I“</strong> wenn ein Wort der Kategorie <strong>„Menschen ohne Behinderung oder Negatives Wort“</strong> auftaucht.
+                                    </li>
+                                    <li>    Wenn Sie einen Fehler machen, erscheint ein <strong><span class="has-text-danger">Rotes X</span></strong>. Drücken Sie die andere
+                                            Taste, um fortzufahren. Versuchen Sie so schnell wie möglich zu antworten, <strong>ohne
+                                                    Fehler</strong> zu begehen</li>
+                                    <li>
+                                        Um weiterzufahren drücken Sie auf den Button<span><a href="{{ url_for('seventh') }}" class="button is-warning is-large is-outlined" style="margin-left: 1rem;" title="Leertaste drücken">Starten</a></span>
+                                    </li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+
+                        <div class="column is-1">
+
+                        </div>
+
+                    </div>
+                    <div class="divider">
+
+                    </div>
+                </div>
+              </div>
+        </section>
+
+    </body>

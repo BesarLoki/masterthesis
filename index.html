@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Disability Bias Survey</title>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+     
+        
+      </head>
+
+    <body>
+      <div class="navbar is-fixed-top">
+        <div class="container">
+            <div class="columns" style="display: flex;">
+              <div class="column is-4 is-6-mobile" style="align-self: center;">
+                  <img src="{{ url_for('static', filename='img/centerlogo.jpg') }}" width="900" style="min-width:20rem; max-height: 8rem;"> 
+              </div>
+              
+              <div class="column is-4 is-1-mobile" style="align-self: flex-end;">
+              </div>
+              <div class="column is-4 is-hidden-mobile" style="align-self: flex-end;">
+                  <div class="field is-grouped is-grouped-multiline">
+                      <div class="control">
+                        <div class="tags has-addons">
+                          <span class="tag is-dark" style="height: 4vh; font-size: 1.25rem">Umfrage ausgefüllt</span>
+                          <span class="tag is-info" style="height: 4vh; font-size: 1.25rem">{{ progress }}%</span>
+                        </div>
+                      </div> 
+                  <progress class="progress is-medium" value="{{ progress }}" max="100"></progress>
+                  <br>
+                  </div>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+
+
+<div class="divider">
+
+</div>
+<div class="divider">
+
+</div>
+
+<section>
+    <div class="hero-body" style="overflow: scroll;">
+        <div class="container">
+          <div class="content is-large">
+            <h1>
+              Studie zu impliziten Assoziationen gegenüber Menschen mit Behinderung
+            </h1>
+            <p>
+              Besten Dank, dass Sie sich dazu bereit erklärt haben in dieser Studie mitzuwirken. Ihre Teilnahme ermöglich es, einen <strong>unkonventionellen Messansatz</strong> für implizite Vorurteile zu entwickeln. 
+            </p>
+            <p>
+              Sämtliche Antworten in dieser Umfrage werden <strong>anonym</strong> ausgewertet. Da der folgende Test, in der Entwicklungs- und Validierungsphase ist, ist es <strong>nicht</strong> möglich Ihnen im Anschluss die Ergebnisse aufzuzeigen. Sie können mich jedoch auf der untenstehenden <strong>E-Mailadresse</strong> kontaktieren, falls allfällige Fragen auftauchen. 
+            </p>
+            <p>
+              Auf der nächsten Seite erhalten sie Informationen zur Vorgehensweise der einzelnen Testblöcke. Der IAT selbst umfasst 7 Blöcke (insgesamt ca. 10min). Die Gesamte Umfrage dauert <strong>ca. 25min</strong>.
+            </p>
+
+          </div>
+        <div class="divider" style="height: 5vh;">
+        </div>
+        <div class="columns">
+          <div class="column is-12 has-background-light">
+              <nav class="level" style="height: 15vh;">
+                  <div class="level-item has-text-centered">
+                    <div>
+                      <p class="heading">Umfrageteilnehmer</p>
+                      <p class="title">{{ count_status }}</p>
+                    </div>
+                  </div>
+                  <div class="level-item has-text-centered">
+                    <div>
+                      <p class="heading">Teilnehmerziel</p>
+                      <p class="title">100</p>
+                    </div>
+                  </div>
+                  
+                  <div class="level-item has-text-centered">
+                      <div>
+                        <p class="heading">Kontakt</p>
+                        <a class="title" href="mailto:besar.loki@student.unisg.ch">
+                            <span class="icon">
+                                <i class="fas fa-envelope"></i>
+                            </span>
+                            Mail
+                          </a>
+                      </div>
+                    </div>
+
+                    <div class="level-item has-text-centered">
+                        <a class="button is-large is-success">
+                            <span class="icon is-medium">
+                              <i class="fas fa-arrow-alt-circle-down"></i>
+                            </span>
+                            <span>Weiter</span>
+                          </a>
+                    </div>
+                </nav>
+          </div>
+        </div>
+          
+        </div>
+        
+        <!-- nächste Seite -->
+        
+        
+        <div class="divider">
+
+        </div>
+
+
+      <div class="container">
+        <div class="columns">
+          <div class="column is-12 has-background-light">
+              <div class="title is-size-2">
+                  Erläuterung Ablauf
+                </div>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="column is-12">
+            <img src="{{ url_for('static', filename='img/image.png') }}"> 
+          </div>
+        </div>
+        <div class="divider" style="height: 3vh;">
+
+        </div>    
+          <div class="columns">
+            <div class="column is-12 has-text-centered">
+              <a href="{{ url_for('first') }}">
+                <span class="icon has-text-success" style="font-size: 6rem;">
+                  <i class="fas fa-pen"></i>
+                </span>
+                <span class="title is-size-3">
+                  Umfrage starten
+                </span>
+              </a>                 
+            </div>
+          </div>
+      </div>
+      </div>
+</section>
+
+</body>
+</html>
+
+
+

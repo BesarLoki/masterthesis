@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hello Bulma!</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.1/css/bulma.min.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"></script>
+    <link rel="stylesheet" href="custom.css">
+
+  </head>
+  <body>
+    <script>
+        window.addEventListener("keydown", checkKeyPressed, false);
+
+        var counter = 0
+        var wrongInputMessage = false //wenn false, e, wenn true, dann i!
+        var val = 69
+        var start = Date.now();
+        var finish;
+        var times = []
+
+        function checkKeyPressed(e) {
+            if (e.keyCode == val) {
+                finish = Date.now();
+                val = 0
+                nextSection();
+            } else {
+                sectionAlert = 'section' + counter.toString() + 'Alert';
+                var x = document.getElementById(sectionAlert);
+                x.style.display = "block";
+            }
+        }
+            /*    if (left == false) {
+                    wrongInputMessage = true;
+                }
+                if (left == true) {
+                    wrongInputMessage = false;
+                    nextSection();
+                }
+            }
+            if (e.keyCode == "73") {
+                if (right == false) {
+                    wrongInputMessage = true;
+                }
+                if (right == true) {
+                    wrongInputMessage = false;
+                    nextSection();
+                }
+            }
+        } */
+
+        function nextSection() {
+            var sectionId = "section" + counter.toString();
+            var x = document.getElementById(sectionId);
+            x.style.display = "none";
+            counter = counter + 1;
+            var nextSectionId = "section" + counter.toString();
+            var x = document.getElementById(nextSectionId);
+            x.style.display = "block";
+            val = document.getElementById(nextSectionId).getAttribute('data-value');
+            reactionTime = finish - start;
+            times.push(reactionTime);
+            console.log(times);
+            start = Date.now()
+
+        }
+        </script>
+
+        <section id="section0" class="hero is-fullheight" style="display:block;" data-value="69">
+                <div class="container">
+                    <div class="columns">
+                        <div class="column is-5">
+                            <div class="tile notification" style="display: flex; justify-content: center;">
+                                <div class="content">
+                                    <h1>Drücken Sie "E" für <br><span class="has-text-success">Positives Wort</span></h1>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="column is-2">
+
+                        </div>
+
+                        <div class="column is-5">
+                            <div class="tile notification" style="display: flex; justify-content: center;">
+                                <div class="content">
+                                        <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-body" style="display: flex;">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-5">
+
+                            </div>
+                            <div class="column is-2">
+                            <div class="content">
+                            <h1> Kompetenz </h1>
+                            </div>
+                            </div>
+
+                            <div class="column is-5">
+
+                            </div>
+
+                        </div>
+
+                        <div id="section0Alert" class="columns" style="display:none;">
+                            <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                X
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+
+
+
+                  <div style="position:absolute; bottom: 5vh;left:20vh;">
+                    Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                    </div>
+            </section>
+
+
+            <section id="section1" class="hero is-fullheight" style="display:none;" data-value="73">
+                    <div class="container">
+                        <div class="columns">
+                            <div class="column is-5">
+                                <div class="tile notification" style="display: flex; justify-content: center;">
+                                    <div class="content">
+                                        <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="column is-2">
+
+                            </div>
+
+                            <div class="column is-5">
+                                <div class="tile notification" style="display: flex; justify-content: center;">
+                                    <div class="content">
+                                            <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column is-5">
+
+                                </div>
+                                <div class="column is-2">
+                                <div class="content">
+                                <h1> hilflos </h1>
+                                </div>
+                                </div>
+
+                                <div class="column is-5">
+
+                                </div>
+
+                            </div>
+
+                            <div id="section1Alert" class="columns" style="display:none;">
+                                <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                    X
+                                </div>
+                            </div>
+
+                        </div>
+                        </div>
+
+
+
+                      <div style="position:absolute; bottom: 5vh;left:20vh;">
+                        Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                        </div>
+                </section>
+
+
+                <section id="section2" class="hero is-fullheight" style="display:none;" data-value="69">
+                        <div class="container">
+                            <div class="columns">
+                                <div class="column is-5">
+                                    <div class="tile notification" style="display: flex; justify-content: center;">
+                                        <div class="content">
+                                            <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="column is-2">
+
+                                </div>
+
+                                <div class="column is-5">
+                                    <div class="tile notification" style="display: flex; justify-content: center;">
+                                        <div class="content">
+                                                <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="hero-body">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+
+                                    </div>
+                                    <div class="column is-2">
+                                    <div class="content">
+                                    <h1> selbstsicher </h1>
+                                    </div>
+                                    </div>
+
+                                    <div class="column is-5">
+
+                                    </div>
+
+                                </div>
+
+                                <div id="section2Alert" class="columns" style="display:none;">
+                                    <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                        X
+                                    </div>
+                                </div>
+
+                            </div>
+                            </div>
+
+
+
+                          <div style="position:absolute; bottom: 5vh;left:20vh;">
+                            Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                            </div>
+                    </section>
+
+                    <section id="section3" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> fähig </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section3Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section4" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> ängstlich </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section4Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section5" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> nutzlos </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section5Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section6" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> Effizienz </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section6Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section7" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> langsam </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section7Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section8" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> Schwäche </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section8Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section9" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> Intelligenz </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section9Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+
+
+
+                        <section id="section10" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> fähig </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section10Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section11" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> nutzlos </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section11Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section12" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> selbstsicher </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section12Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section13" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> Kompetenz </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section13Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section14" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> ängstlich </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section14Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section15" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> hilflos </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section15Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section16" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> Intelligenz </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section16Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section17" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> Schwäche </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section17Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section18" class="hero is-fullheight" style="display:none;" data-value="73">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> langsam </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section18Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+                        <section id="section19" class="hero is-fullheight" style="display:none;" data-value="69">
+                            <div class="container">
+                                <div class="columns">
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                <h1>Drücken Sie "E" für<br><span class="has-text-success">Positives Wort</span></h1>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="column is-2">
+
+                                    </div>
+
+                                    <div class="column is-5">
+                                        <div class="tile notification" style="display: flex; justify-content: center;">
+                                            <div class="content">
+                                                    <h1>Drücken Sie "I" für<br><span class="has-text-success">Negatives Wort</span></h1>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="hero-body">
+                                <div class="container">
+                                    <div class="columns">
+                                        <div class="column is-5">
+
+                                        </div>
+                                        <div class="column is-2">
+                                        <div class="content">
+                                        <h1> Effizienz </h1>
+                                        </div>
+                                        </div>
+
+                                        <div class="column is-5">
+
+                                        </div>
+
+                                    </div>
+
+                                    <div id="section19Alert" class="columns" style="display:none;">
+                                        <div class="column is-12 has-text-danger has-text-centered" style="font-size: 16rem;">
+                                            X
+                                        </div>
+                                    </div>
+
+                                </div>
+                                </div>
+
+
+
+                              <div style="position:absolute; bottom: 5vh;left:20vh;">
+                                Wenn Sie einen Fehler machen, erscheint ein rotes X. Drücken Sie die korrekte Taste um fortzufahren
+
+                                </div>
+                        </section>
+
+
+                        <section id="section20" class="hero is-fullheight" style="display:none;">
+                            <!-- Hero head: will stick at the top -->
+                            <div class="hero-head">
+                              <header class="navbar">
+                                <div class="container">
+                                      <img src="{{ url_for('static', filename='img/centerlogo.jpg') }}" alt="Logo">
+                                </div>
+                              </header>
+                            </div>
+
+                            <!-- Hero content: will be in the middle -->
+                            <div class="hero-body">
+                              <div class="container has-text-centered has-background-light" style="padding:1rem;">
+                                <h1 class="title">
+                                    Sie haben den <strong>zweiten Teil</strong> der Umfrage erfolgreich abgeschlossen
+                                </h1>
+                                <div>
+                                    <a href="{{ url_for('fifth') }}" class="button is-large is-success" style="margin-left: 1rem;" title="Leertaste drücken">Zum nächsten Teil</a>
+                                </div>
+                              </div>
+                            </div>
+
+                          </section>
+
+  </body>
+</html>
